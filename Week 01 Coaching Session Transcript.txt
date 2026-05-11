@@ -1,0 +1,95 @@
+Week 01 Coaching Session Transcript
+
+Coach:
+Welcome! Just to be clear from the start, this is a coaching session, not a test. It is perfectly okay—and even encouraged—to say “I don’t know” or “I made a mistake.” That’s the fastest way we’ll learn today.
+
+I’ll act as your supportive Learning Coach and Software Mentor, and we’ll go through the assignment together one step at a time in a safe, non-judgmental way. Since we’re working in a chat interface, whenever we discuss code, please paste the relevant code snippet directly into the chat.
+
+To get started: what name would you like me to call you during this coaching session?
+
+Lennie:
+lennie
+
+Coach:
+Great to meet you, Lennie. This is a safe learning space, and mistakes are part of the process—we’re here to understand your thinking and strengthen anything that feels uncertain.
+
+To begin with Topic 1 on Express routing, could you paste a non-trivial snippet from your server.js (or related routing file) that shows how your Express routes work?
+
+Lennie:
+[pasted Express routing code]
+
+Coach:
+Thanks for sharing that, Lennie. This is a solid example because it shows several important Express concepts working together: middleware, static files, route handlers, environment configuration, and EJS rendering.
+
+One thing I notice is that each route follows the same pattern of defining a title and then calling res.render(...) to load an EJS page.
+
+What does res.render('projects', { title }) actually do in your application, and why did you choose to use EJS rendering instead of sending plain HTML directly from the route?
+
+Lennie:
+i did the rendering thing because it's kind of like using a function for html. the headers and footers are all the same on all the pages so i used ejs to render them
+
+Coach:
+That’s a good explanation, Lennie. You’re identifying one of the biggest advantages of EJS correctly: reusability. Instead of repeating the same HTML structure on every page, you can separate shared layout pieces like headers and footers into reusable templates and render them dynamically. Comparing it to using a function is actually a useful way to think about it.
+
+You also mentioned that the headers and footers are shared across pages, which connects directly to Topic 3 about EJS partials.
+
+Could you paste one EJS snippet that shows how you included a partial (like a header or footer) inside one of your EJS pages?
+
+Lennie:
+[pasted EJS snippet]
+
+Coach:
+Thanks, Lennie. I can see the reusable structure idea in this snippet already—especially the shared <head> setup and navigation menu that would appear across multiple pages. That’s exactly the kind of repeated UI content EJS partials help manage cleanly.
+
+I also notice you’re using <%= title %> dynamically, which means the route is passing data into the EJS template during res.render(...).
+
+Can you explain what <%= title %> is doing here and how the value gets from your Express route into this EJS page?
+
+Lennie:
+it's getting the title variable that i pass into the render function and passing it into that
+
+Coach:
+Exactly right. In your route, you do something like:
+res.render('projects', { title });
+
+That second argument is an object of data you want to make available inside the EJS template. Then inside the template, <%= title %> outputs the value into the HTML.
+
+Now let’s move into Topic 2 on JavaScript language principles.
+
+Could you paste a JavaScript function from your project that you think demonstrates an important JavaScript concept or pattern you used?
+
+Lennie:
+[pasted async Express route]
+
+Coach:
+That’s a useful snippet for discussing JavaScript principles because it demonstrates several language features at once: arrow functions, async functions, callbacks, constants, and object shorthand syntax.
+
+What does the async keyword mean in this route handler, and why might a developer use it even if there’s no await in the code yet?
+
+Lennie:
+i'm not sure
+
+Coach:
+That’s completely fine, Lennie — this is exactly the kind of thing coaching sessions are for.
+
+The async keyword allows a function to use await for asynchronous operations later, such as database calls, API requests, or file access.
+
+Now let’s move into Topic 4 on frontend CSS.
+
+Could you paste a CSS snippet from your project that you consider important or interesting, and explain what visual effect or layout goal you were trying to achieve with it?
+
+Lennie:
+[pasted navigation CSS]
+
+Coach:
+Nice choice, Lennie. This snippet demonstrates several important frontend CSS concepts: Flexbox layout, spacing, navigation styling, and resetting default browser styles.
+
+What made you decide to use Flexbox for the navigation layout instead of something older like floats or inline positioning?
+
+Lennie:
+i just like the way that it's easier to use and it makes it nice and professional looking
+
+Coach:
+That’s a strong practical reason, and honestly it reflects modern frontend development pretty well. Flexbox became popular because it simplifies alignment and spacing problems that used to take much more complicated CSS with floats, clearfix hacks, or manual spacing adjustments.
+
+Your answer also shows good design thinking: you chose a tool that improves both developer experience and visual consistency.
